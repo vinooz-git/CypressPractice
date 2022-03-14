@@ -1,0 +1,104 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-03-10T10:02:21.544Z",
+    "end": "2022-03-10T10:02:30.124Z",
+    "duration": 8580,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "a562229f-4c56-4603-a8c5-3bcd1f4a6aca",
+      "title": "",
+      "fullFile": "cypress/integration/MCPractice/SampleRun.js",
+      "file": "cypress/integration/MCPractice/SampleRun.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "61b9b522-0ad3-4965-abb6-d9a3440f77a0",
+          "title": "Demo Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Demo Test case",
+              "fullTitle": "Demo Test Suite Demo Test case",
+              "timedOut": null,
+              "duration": 6108,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://www.mastercard.us/engage/#/en/home\");\n/*\ncy.get('.search-keyword').type('ca')\ncy.wait(2000)\n//selenium get hit url in browser, cypress get acts like findElement of selenium\ncy.get('.product').should('have.length',5)\ncy.get('.product:visible').should('have.length',4)\n//Parent child chaining\ncy.get('.products').as('productLocator')\ncy.get('@productLocator').find('.product').should('have.length',4)\ncy.get(':nth-child(3) > .product-action > button').click()\ncy.get('@productLocator').find('.product').eq(2).contains('ADD TO CART').click().then(function()\n{\n    console.log('sf')\n})\n\ncy.get('@productLocator').find('.product').each(($el, index, $list) => {\n\nconst textVeg=$el.find('h4.product-name').text()\nif(textVeg.includes('Cashews'))\n{\n$el.find('button').click()\n}\n})\n\n//assert if logo text is correctly displayed\ncy.get('.brand').should('have.text','GREENKART')\n\n//this is to print in logs\ncy.get('.brand').then(function(logoelement)\n{\n    cy.log(logoelement.text())\n\n})\n//const logo=cy.get('.brand')\n//cy.log(cy.get('.brand').text())\n// cy.log(logo.text())\n\n*/",
+              "err": {},
+              "uuid": "c5111025-9399-42d1-b37e-6c031c1021c6",
+              "parentUUID": "61b9b522-0ad3-4965-abb6-d9a3440f77a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c5111025-9399-42d1-b37e-6c031c1021c6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6108,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}

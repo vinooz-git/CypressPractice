@@ -1,0 +1,147 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 2,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-03-10T10:00:27.526Z",
+    "end": "2022-03-10T10:02:00.263Z",
+    "duration": 92737,
+    "testsRegistered": 3,
+    "passPercent": 66.66666666666666,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "994eb225-beb0-4988-919e-fec1db4c8c63",
+      "title": "",
+      "fullFile": "cypress/integration/MCDirectory/SampleDemo.js",
+      "file": "cypress/integration/MCDirectory/SampleDemo.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cb28b614-c69a-4a5e-84bf-8de98dfb33bd",
+          "title": "Demo MC Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Verify Partners in Digital Payments ",
+              "fullTitle": "Demo MC Test Suite Verify Partners in Digital Payments ",
+              "timedOut": null,
+              "duration": 20110,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst directoryPage = new _DirectoryPage.default();\nhomePage.getCookiesAcceptBttn().click();\nhomePage.getProductDirectoryButton().click();\ncy.contains('DIGITAL PAYMENTS').click();\ncy.wait(5000);\ndirectoryPage.getSearchPartnerTextField().type(this.data.DigitalPartner);\ndirectoryPage.getListedPartners().should('have.text', this.data.DigitalPartner);",
+              "err": {},
+              "uuid": "67feffd3-28f6-4ee6-838f-478eec88130b",
+              "parentUUID": "cb28b614-c69a-4a5e-84bf-8de98dfb33bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Partners in Fintech Express ",
+              "fullTitle": "Demo MC Test Suite Verify Partners in Fintech Express ",
+              "timedOut": null,
+              "duration": 32996,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst directoryPage = new _DirectoryPage.default();\nhomePage.getCookiesAcceptBttn().click();\nhomePage.getProductDirectoryButton().click();\ncy.contains('FINTECH EXPRESS').click();\ncy.wait(5000);\ndirectoryPage.getSearchPartnerTextField().type(this.data.FintechPartner);\ndirectoryPage.getListedPartners().should('have.text', this.data.FintechPartner);",
+              "err": {},
+              "uuid": "08995a1b-2a17-4180-bebe-9be60ed6b91f",
+              "parentUUID": "cb28b614-c69a-4a5e-84bf-8de98dfb33bd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Verify Partners in Commercial ",
+              "fullTitle": "Demo MC Test Suite Verify Partners in Commercial ",
+              "timedOut": null,
+              "duration": 36423,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const homePage = new _HomePage.default();\nconst directoryPage = new _DirectoryPage.default();\nhomePage.getCookiesAcceptBttn().click();\nhomePage.getProductDirectoryButton().click();\ncy.contains('COMMERCIAL').click();\ncy.wait(5000);\ncy.searchPartners(this.data.FintechPartner);\ncy.verifyPartners(this.data.FintechPartner);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.undefined > :nth-child(1)`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `.undefined > :nth-child(1)`, but never found it.\n    at Context.eval (https://www.mastercard.us/__cypress/tests?p=cypress\\support\\index.js:153:37)",
+                "diff": null
+              },
+              "uuid": "bc9f0594-be58-4b0d-af9b-dc6624358d35",
+              "parentUUID": "cb28b614-c69a-4a5e-84bf-8de98dfb33bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "67feffd3-28f6-4ee6-838f-478eec88130b",
+            "08995a1b-2a17-4180-bebe-9be60ed6b91f"
+          ],
+          "failures": [
+            "bc9f0594-be58-4b0d-af9b-dc6624358d35"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 89529,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "4.1.0"
+    }
+  }
+}
