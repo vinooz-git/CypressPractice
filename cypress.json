@@ -2,6 +2,10 @@
     "chromeWebSecurity":false,
   "defaultCommandTimeout": 8000,
   "pageLoadTimeout": 80000,
+  "fixturesFolder":"cypress/TestData",
+  "integrationFolder":"cypress/TestCases",
+  "supportFile":"cypress/Utilities",
+
   "env": {
     "url": "https://www.mastercard.us/engage/#/en/home"
   },

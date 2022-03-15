@@ -1,7 +1,7 @@
 {
   "url":"https://www.mastercard.us/engage/#/en/home",
-  "DigitalPartner":"Infosys",
-  "FintechPartner":"Railsbank",
+  "DigitalPartner":"HST",
+  "FintechPartner":"Mastercard Processing",
   "SampleArray": ["One", "Two", "Three"],
   "CurrencyInputs": {
     "from": {

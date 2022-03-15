@@ -1,4 +1,6 @@
-class HomePage
+import BasePage from "../BasePage";
+
+class HomePage extends BasePage
 {
 
     getProductDirectoryButton() { return cy.get('.dxp-btn.dxp-btn-primary.dxp-theme-white') }
@@ -10,4 +12,5 @@ class HomePage
     getSupportMenu() { return cy.get('.dxp-title-first[title="Support"]') }
 
 }
-export default HomePage;
+
+module.exports = new HomePage();

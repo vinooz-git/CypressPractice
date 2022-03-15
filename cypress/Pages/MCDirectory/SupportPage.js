@@ -1,4 +1,6 @@
-class SupportPage
+import BasePage from "../BasePage";
+
+class SupportPage extends BasePage
 {
 
     getTransactionCurrencyDDButtn() { return cy.get('#tCurrency') }
@@ -21,4 +23,5 @@ class SupportPage
 
 
 }
-export default SupportPage;
+
+module.exports = new SupportPage();

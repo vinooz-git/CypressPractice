@@ -1,15 +1,16 @@
 /// <reference types="Cypress" />
-import HomePage from '../../support/pageObjects/HomePage'
-import DirectoryPage from '../../support/pageObjects/DirectoryPage'
-import SupportPage from '../../support/pageObjects/SupportPage'
 
+const homePage = require('../../Pages/MCDirectory/HomePage'),
+directoryPage = require('../../Pages/MCDirectory/DirectoryPage'),
+supportPage= require('../../Pages/MCDirectory/SupportPage');
 
 describe('Demo MC Test Suite', function() 
 {
-  const homePage = new HomePage()
-  const directoryPage = new DirectoryPage()
-  const supportPage = new SupportPage()
+  //const homePage = new HomePage()
+  //const directoryPage = new DirectoryPage()
+  //const supportPage = new SupportPage()
   const testData = null
+
     beforeEach(function() {                   // runs each time before each it block
          
       cy.fixture('example').then(function(data)
@@ -24,7 +25,7 @@ describe('Demo MC Test Suite', function()
 
    
    it.skip('Read the array data from Nested Json File', function() {
-   const testData = this.data
+   testData = this.data
 
     cy.get(testData.SampleArray).each((testDataObj) => 
          {
@@ -58,9 +59,8 @@ describe('Demo MC Test Suite', function()
 
     //Validation part with cypress 
 
-    supportPage.getExchangeInfo().should('have.value', '50,000.00 INR')
+    supportPage.getExchangeInfo().should('contain.text', '50,000.00 INR')
     
-    //should('include','50,000.00 INR')
 
   } )
 

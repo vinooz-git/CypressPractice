@@ -1,4 +1,6 @@
-class DirectoryPage
+import BasePage from "../BasePage";
+
+class DirectoryPage extends BasePage
 {
 
     getSearchPartnerTextField()
@@ -12,4 +14,4 @@ class DirectoryPage
     }
 
 }
-export default DirectoryPage;
+module.exports = new DirectoryPage();

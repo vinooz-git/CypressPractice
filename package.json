@@ -13,7 +13,8 @@
     "merge-report": "npx mochawesome-merge --reportDir cypress/reports/separate-reports cypress/reports/full_report.json",
     "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/full_report.json",
     "afterTests": "npm run merge-report; npm run generate-report",
-    "RunWithReport": "npm run test npm run afterTests"
+    "RunWithReport": "npm run test npm run afterTests",
+    "BrowserStackRun":"browserstack-cypress run --sync"
 
   },
   "author": "Vinoth",
