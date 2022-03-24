@@ -14,18 +14,28 @@
     "generate-report": "npx mochawesome-report-generator --reportDir cypress/reports cypress/reports/full_report.json",
     "afterTests": "npm run merge-report; npm run generate-report",
     "RunWithReport": "npm run test npm run afterTests",
-    "BrowserStackRun":"browserstack-cypress run --sync"
-
+    "BrowserStackRun": "browserstack-cypress run --sync"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/TestCases/BDDDemo",
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   },
   "author": "Vinoth",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^9.5.1",
-    "cypress-cucumber-preprocessor": "^2.5.5",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-xpath": "^1.6.2",
     "mocha": "^5.2.0",
     "mochawesome": "^4.1.0",
     "mochawesome-merge": "^4.2.1",
     "mochawesome-report-generator": "^6.1.1",
-    "multiple-cucumber-html-reporter": "^1.18.0"
+    "multiple-cucumber-html-reporter": "^1.19.0"
   }
 }

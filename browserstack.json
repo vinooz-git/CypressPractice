@@ -1,63 +1,44 @@
 {
     "auth": {
-        "username": "<Your BrowserStack username>",
-        "access_key": "<Your BrowserStack access key>"
+        "username": "vinothkumar_oevrhF",
+        "access_key": "H4T6iEkMrUdzSqU7yXx4"
     },
     "browsers": [
-        {
-            "browser": "chrome",
-            "os": "Windows 10",
-            "versions": [
-                "latest",
-                "latest-1"
-            ]
-        },
+       
         {
             "browser": "firefox",
             "os": "Windows 10",
             "versions": [
-                "latest",
-                "latest-1"
+                "86"
             ]
         },
         {
             "browser": "chrome",
-            "os": "OS X Mojave",
-            "versions": [
-                "latest",
-                "latest-1"
-            ]
-        },
-        {
-            "browser": "firefox",
-            "os": "OS X Mojave",
-            "versions": [
-                "latest",
-                "latest-1"
-            ]
-        },
-        {
-            "browser": "chrome",
-            "os": "OS X Catalina",
-            "versions": [
-                "latest",
-                "latest-1"
-            ]
+            "os": "Windows 11",
+            "versions": ["latest-1"]
         },
         {
             "browser": "edge",
-            "os": "OS X Catalina",
-            "versions": [
-                "latest",
-                "latest-1"
-            ]
+            "os": "macOS Catalina",
+            "versions": ["latest"]
         }
+        
     ],
     "run_settings": {
-        "cypress_config_file": "cypress.json",
-        "project_name": "Cypres Demo",
-        "build_name": "Cypres Demo Build 1",
-        "parallels": "2",
-        "headless": true
+        "cypress_config_file": "./cypress.json",
+        "project_name": "Cypress Demo",
+        "build_name": "Cypress Demo Build 1",
+        "headless": false,
+        "parallels": "3",
+        "npm_dependencies": {
+            "cypress-cucumber-preprocessor": "^4.3.1",
+            "cypress-xpath": "^1.6.2"
+        },"package_config_options": {
+            "cypress-cucumber-preprocessor": {
+                "nonGlobalStepDefinitions": true,
+                "stepDefinitions": "cypress/TestCases/BDDDemo"
+            }
+        }
+
     }
 }

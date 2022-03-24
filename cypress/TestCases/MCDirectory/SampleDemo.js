@@ -2,15 +2,11 @@
 
 const homePage = require('../../Pages/MCDirectory/HomePage'),
 directoryPage = require('../../Pages/MCDirectory/DirectoryPage'),
-supportPage= require('../../Pages/MCDirectory/SupportPage');
+supportPage= require('../../Pages/MCDirectory/SupportPage'),
+testData = null;
 
 describe('Demo MC Test Suite', function() 
 {
-  //const homePage = new HomePage()
-  //const directoryPage = new DirectoryPage()
-  //const supportPage = new SupportPage()
-  const testData = null
-
     beforeEach(function() {                   // runs each time before each it block
          
       cy.fixture('example').then(function(data)
@@ -26,49 +22,37 @@ describe('Demo MC Test Suite', function()
    
    it.skip('Read the array data from Nested Json File', function() {
    testData = this.data
-
     cy.get(testData.SampleArray).each((testDataObj) => 
          {
           cy.log(" array val each "+testDataObj) 
          }
     )})
 
+
    it.only('Verify Currency Converter in MasterCard',function() {
     
-    homePage.getCookiesAcceptBttn().click()
-    cy.wait(1000)
-    homePage.getMasterCardTabMenu().click()
-    cy.wait(1000)
-    homePage.getSupportMenu().invoke('show')
-    cy.contains('Currency converter').click({force: true})
-
-    supportPage.getTransactionCurrencyDDButtn().click()
-    supportPage.getTransactionSearchBttn().type(this.data.CurrencyInputs.from.TransCurrency,{force: true})
-    cy.wait(1000)
-    cy.contains(this.data.CurrencyInputs.from.TransCurrency).click()
-
-    supportPage.getTransAmountText().type(this.data.CurrencyInputs.from.Amount)
-
-    supportPage.getCardCurrencyDDButtn().click()
-    supportPage.getCardCurrSearchBttn().type(this.data.CurrencyInputs.to.CardCurrency)
-    cy.wait(1000)
-    cy.contains(this.data.CurrencyInputs.to.CardCurrency).click()
-
-    supportPage.getBankFeeText().type(this.data.CurrencyInputs.to.BankFee)
-    supportPage.getDateIcon().dblclick()
+    homePage.clickCookiesAccBttn()
+    homePage.clickMasterCardTabMenu()
+    homePage.clickCurrencyConverterMenu()
+    
+    supportPage.clickTransCurrencyDDBttn()
+    supportPage.clickTransactionSearchBttn(this.data.CurrencyInputs.from.TransCurrency)
+    supportPage.EnterTransactionAmt(this.data.CurrencyInputs.from.Amount)
+    supportPage.clickCardCurrencyDDButtn()
+    supportPage.EnterCardCurrency(this.data.CurrencyInputs.to.CardCurrency)
+    supportPage.EnterBankFee(this.data.CurrencyInputs.to.BankFee)
+    supportPage.doublClickDateIcon()
 
     //Validation part with cypress 
-
     supportPage.getExchangeInfo().should('contain.text', '50,000.00 INR')
     
-
   } )
 
 
    it('Verify Partners in Digital Payments',function() {
     
-    homePage.getCookiesAcceptBttn().click()
-    homePage.getProductDirectoryButton().click()
+    homePage.clickCookiesAccBttn()
+    homePage.clickProductDirectoryButton()
     cy.contains('DIGITAL PAYMENTS').click()
     cy.wait(5000)
     directoryPage.getSearchPartnerTextField().type(this.data.DigitalPartner)
@@ -79,8 +63,8 @@ describe('Demo MC Test Suite', function()
       
   it('Verify Partners in Fintech Express ',function() {
     
-    homePage.getCookiesAcceptBttn().click()
-    homePage.getProductDirectoryButton().click()
+    homePage.clickCookiesAccBttn()
+    homePage.clickProductDirectoryButton()
     cy.contains('FINTECH EXPRESS').click()
     cy.wait(5000)
     directoryPage.getSearchPartnerTextField().type(this.data.FintechPartner)
@@ -91,8 +75,8 @@ describe('Demo MC Test Suite', function()
 
    it('Verify Partners in Commercial ',function() {
 
-    homePage.getCookiesAcceptBttn().click()
-    homePage.getProductDirectoryButton().click()
+    homePage.clickCookiesAccBttn()
+    homePage.clickProductDirectoryButton()
     cy.contains('COMMERCIAL').click()
     cy.wait(5000)
     cy.searchPartners(this.data.FintechPartner)
@@ -100,6 +84,6 @@ describe('Demo MC Test Suite', function()
 
    }  )
 
-  
+
 
 }  )
